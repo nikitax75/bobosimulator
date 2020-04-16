@@ -7,6 +7,14 @@
 # Le but est de coder le simulateur de la ville de Paris qui démarre avec 10 bobos (20a), 300 de bobo_food et donne les evénements
 # , le nombre de bobos en vie et leur age chaque jour. Le nombre initial de bobos et de bobo food est paramétrable.
 
+# import des modules nécessaires
+
+import random
+
+# Création de la bobofood
+
+bobofood = 300
+
 # Création du bobo
 
 class Bobo:
@@ -21,19 +29,25 @@ class Bobo:
         age = age =+ 1
     pass
 
-    def bobo_die_old_age(self):
-        if age > 100:
+    def bobo_eats(self):
+        if bobofood > 0:
+            bobofood = bobofood =- 1
+
+# liste des morts possibles:
+
+    def bobo_dies_old_age(self):
+        if age == 100:
             alive is False
     pass
 
-    def bobo_eats(self):
+    def bobo_dies_starving(self):
+        if bobofood < 1:
+            alive is False
+    pass
 
-
-
-# Création de la bobo food
-
-bobofood = 300
+    def bobo_dies_sad_accident(self):
+        random.choice
 
 # Création du simulateur qui donne le résultat. Les paramètres sont le nombre initial et la bobo-food
 
-def bobo_simulator(bobo_people,bobofood):
+# def bobo_simulator(bobo_people,bobofood):
